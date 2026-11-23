@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./src/assets/bed.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>Sleeping Bacchan</title>
+  </head>
+  <body>
+    <div class="hud">
+      <span id="score">Score: 0</span>
+      <span id="lives"></span>
+    </div>
+
+    <main>
+      <div class="targets"></div>
+
+      <div class="bed">
+        <figure class="bed-img">
+          <img src="./src/assets/bed.png" alt="" />
+        </figure>
+
+        <div class="aim-line">
+          <svg
+            width="100%"
+            height="500"
+            viewBox="0 0 600 500"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="300"
+              y1="0"
+              x2="300"
+              y2="500"
+              stroke-width="3"
+              stroke-dasharray="12 8"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                from="-40"
+                to="0"
+                dur="0.25s"
+                repeatCount="indefinite"
+              />
+            </line>
+          </svg>
+
+          <div class="aim-handler"></div>
+
+          <!-- loaded bullet, rotates with the aim line -->
+          <div class="bullet"></div>
+        </div>
+      </div>
+    </main>
+
+    <div class="overlay" id="overlay">
+      <h1 id="overlay-title">
+        <img src="./src/assets/bed.png" alt="" />
+        Sleeping Bacchan
+      </h1>
+      <p id="overlay-text">
+        Hold &amp; drag to aim, release to shoot.<br />
+        Don't let the mosquitoes bite you!
+      </p>
+      <button id="start-btn">Start</button>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
